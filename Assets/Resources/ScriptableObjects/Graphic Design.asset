@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a88c34359e70ca4cbc50bb8d6720f2b, type: 3}
-  m_Name: Understand Tech
+  m_Name: Graphic Design
   m_EditorClassIdentifier: 
-  nameOfSkill: Organize Meetings
-  descriptionOfSkill: Ability to do something probably
+  nameOfSkill: Graphic Design
+  descriptionOfSkill: Ability to create and modify templates and images in photoshop
+    and similar as needed

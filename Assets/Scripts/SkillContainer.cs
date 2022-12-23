@@ -2,26 +2,115 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using System.Linq;
+using TMPro;
 
 public class SkillContainer : MonoBehaviour
 {
-    [SerializeField] private List<Skills> skillsHad;
-    [SerializeField] private List<Skills> skillsNotHad;
-    [SerializeField, TextArea(15, 20)] private string skillList = "Your Skills:";
+    [SerializeField] private List<Skill> skillObjectList;
+    [SerializeField] private string originalSkillListString = "Your Skills:\n";
+    [SerializeField] private string addSkillsString = "Add your skills to the blue box!";
+    private string skillList = "Your Skills:";
 
-    public void AddSkill(bool goodSkill, Skills skill)
+    private int numSkillsAssigned = 0;
+    private int numSkillsHad = 0;
+
+    //cached references
+    [SerializeField]
+    private SkillGenerator skillGenerator;
+    [SerializeField]
+    private GameObject undoButton;
+    [SerializeField]
+    private TextMeshProUGUI skillListTextBox;
+
+    public ref List<Skill> SkillObjectList
     {
-        if (!skillsHad.Contains(skill) && !skillsNotHad.Contains(skill))
+        get => ref skillObjectList;
+    }
+
+    private void OnValidate()
+    {
+        skillObjectList = Resources.LoadAll<Skill>("").ToList();
+        foreach (Skill currentSkill in skillObjectList)
         {
-            if (goodSkill)
+            currentSkill.Init();
+        }
+    }
+
+    private void Start()
+    {
+        if (skillGenerator == null)
+        {
+            skillGenerator = FindObjectOfType<SkillGenerator>();
+        }
+        if (undoButton == null)
+        {
+            Debug.LogError("no reference to undo button set in " + this);
+        }
+
+        undoButton.SetActive(false);
+
+        skillList = addSkillsString;
+        skillListTextBox.text = skillList;
+    }
+
+    //assigns the skill as either had or not
+    public void AssignSkill(bool goodSkill, Skill skill)
+    {
+        if (skill.SkillAssigned == false)
+        {
+            skill.HasSkill = goodSkill;
+            skill.SkillAssigned = true;
+
+            AdjustSkillList();
+        }
+    }
+
+    //removes the skill from the list and marks it as not yet assigned
+    public void RemoveSkill(Skill skill)
+    {
+        skill.HasSkill = false;
+        skill.SkillAssigned = false;
+
+        AdjustSkillList();
+    }
+
+    private void AdjustSkillList()
+    {
+
+        skillList = originalSkillListString;
+        numSkillsAssigned = 0;
+        numSkillsHad = 0;
+
+        foreach (Skill currentSkill in skillObjectList)
+        {
+            if (currentSkill.SkillAssigned)
             {
-                skillsHad.Add(skill);
-                skillList = (skillList + "\n" + skill.NameOfSkill);
+                numSkillsAssigned++;
             }
-            else
+
+            if (currentSkill.HasSkill)
             {
-                skillsNotHad.Add(skill);
+                skillList = (skillList + "\n" + currentSkill.NameOfSkill);
+                skillListTextBox.text = skillList;
+                numSkillsHad++;
             }
+        }
+
+        //activate the undo button if we have assigned any skills
+        undoButton.SetActive(numSkillsAssigned >= 1);
+
+        //if we have no skills 
+        if (numSkillsAssigned == 0 || numSkillsHad == 0)
+        {
+            skillList = addSkillsString;
+            skillListTextBox.text = skillList;
+        }
+
+        //if we have not set every skill generate the next skill.
+        if (numSkillsAssigned < skillObjectList.Count)
+        {
+            skillGenerator.GenerateSkill();
         }
     }
 }

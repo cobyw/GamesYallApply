@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a88c34359e70ca4cbc50bb8d6720f2b, type: 3}
-  m_Name: Send Emails and Follow up
+  m_Name: Enjoy Teaching
   m_EditorClassIdentifier: 
-  nameOfSkill: Send Email
-  descriptionOfSkill: Ability to do something probably
+  nameOfSkill: Enjoy Teaching
+  descriptionOfSkill: Enjoy teaching folks new skills

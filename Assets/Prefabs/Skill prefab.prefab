@@ -98,7 +98,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Programming Events
+  m_text: Event Programming
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15.75
+  m_fontSize: 14.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 2431014661100260280}
   - component: {fileID: 2431014661100260277}
   - component: {fileID: 2431014661100260274}
+  - component: {fileID: 5106967319454690635}
   m_Layer: 0
   m_Name: Skill prefab
   m_TagString: skill
@@ -312,3 +313,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: b829b45533ec1fb40bdbec8b84129f7f, type: 2}
   textMeshPro: {fileID: 2431014660663220730}
+--- !u!114 &5106967319454690635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2431014661100260283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c42e11ad2a8a064baeb3c83556676d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialized: 0

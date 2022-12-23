@@ -6,18 +6,30 @@ using TMPro;
 [RequireComponent(typeof(Collider))]
 public class SkillObject : MonoBehaviour
 {
-    [SerializeField] private Skills skill;
+    [SerializeField] private Skill skill;
     [SerializeField] private TextMeshPro textMeshPro;
 
-    public Skills Skill
+    public Skill Skill
     {
         get
         {
             return skill;
         }
+        set
+        {
+            skill = value;
+            SetName();
+            skill.HasSkill = false;
+            skill.SkillAssigned = false;
+        }
     }
 
     private void OnValidate()
+    {
+        SetName();
+    }
+
+    public void SetName()
     {
         textMeshPro.text = skill.NameOfSkill;
         gameObject.name = "Skill - " + skill.NameOfSkill;

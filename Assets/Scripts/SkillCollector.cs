@@ -26,7 +26,7 @@ public class SkillCollector : MonoBehaviour
     {
         if (other.tag == "skill")
         {
-            skillContainer.AddSkill(goodCollector,
+            skillContainer.AssignSkill(goodCollector,
             other.GetComponent<SkillObject>().Skill);
         }
     }
