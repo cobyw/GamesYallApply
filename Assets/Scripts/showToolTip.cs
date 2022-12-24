@@ -2,11 +2,12 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 
-[RequireComponent(typeof(SkillObject))]
 public class showToolTip : MonoBehaviour
 {
     private ToolTip toolTip;
     private SkillObject skillObject;
+    private RoleObject roleObject;
+
     private bool hovered = false;
     private bool mouseDown = false;
     public bool initialized = false;
@@ -24,7 +25,12 @@ public class showToolTip : MonoBehaviour
         {
             if (skillObject == null)
             {
-                skillObject = FindObjectOfType<SkillObject>();
+                skillObject = GetComponent<SkillObject>();
+            }
+
+            if (skillObject == null)
+            {
+                roleObject = GetComponent<RoleObject>();
             }
 
             if (toolTip == null)
@@ -65,7 +71,14 @@ public class showToolTip : MonoBehaviour
 
         if (hovered && !mouseDown)
         {
-            toolTip.OpenToolTip(skillObject.Skill.DescriptionOfSkill);
+            if (skillObject != null)
+            {
+                toolTip.OpenToolTip(skillObject.Skill.DescriptionOfSkill);
+            }
+            else if (roleObject != null)
+            {
+                toolTip.OpenToolTip(roleObject.Role.DescriptionOfRole);
+            }
         }
         else
         {

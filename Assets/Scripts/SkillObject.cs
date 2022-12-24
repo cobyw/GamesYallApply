@@ -20,14 +20,16 @@ public class SkillObject : MonoBehaviour
             skill = value;
             SetName();
             skill.HasSkill = false;
-            skill.SkillAssigned = false;
+            skill.HasSkill = false;
         }
     }
 
+#if UNITY_EDITOR
     private void OnValidate()
     {
         SetName();
     }
+#endif
 
     public void SetName()
     {

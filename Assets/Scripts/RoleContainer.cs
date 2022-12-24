@@ -2,25 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using TMPro;
 
 public class RoleContainer : MonoBehaviour
 {
-
     [SerializeField] private List<Role> allRoleObjects;
-    [SerializeField] private string originalSkillListString = "Your Desired Roles:\n";
-    [SerializeField] private string addSkillsString = "You qualify for these roles! Add roles you are interested in to the blue box!";
-    private string skillList = "Your Desired Roles:";
 
-    [SerializeField] private List<Role> applicableRoleObjects;
+    [SerializeField] private List<Role> qualifiedRoles;
 
+#if UNITY_EDITOR
     private void OnValidate()
     {
         allRoleObjects = Resources.LoadAll<Role>("").ToList();
     }
+#endif
 
-    public void CheckRoles()
+    public List<Role> QualifiedRoles
     {
-        applicableRoleObjects = new List<Role>();
+        get {
+            if (qualifiedRoles.Count == 0)
+            {
+                CheckRoles();
+            }
+
+            return qualifiedRoles;
+        }
+    }
+
+    private void Start()
+    {
+        allRoleObjects = Resources.LoadAll<Role>("").ToList();
+        CheckRoles();
+    }
+
+    private void CheckRoles()
+    {
+        qualifiedRoles = new List<Role>();
 
         foreach (Role currentRole in allRoleObjects)
         {
@@ -40,7 +57,7 @@ public class RoleContainer : MonoBehaviour
             //at this point if they still meet the requirement they are good to go
             if (meetsRequirements)
             {
-                applicableRoleObjects.Add(currentRole);
+                qualifiedRoles.Add(currentRole);
             }
         }
     }

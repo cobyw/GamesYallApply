@@ -5,11 +5,12 @@ using NaughtyAttributes;
 using System.Linq;
 using TMPro;
 
+[RequireComponent(typeof(AnswerSaver))]
 public class SkillContainer : MonoBehaviour
 {
     [SerializeField] private List<Skill> skillObjectList;
     [SerializeField] private string originalSkillListString = "Your Skills:\n";
-    [SerializeField] private string addSkillsString = "Add your skills to the blue box!";
+    [SerializeField, TextArea(5, 25)] private string addSkillsString = "Add your skills to the blue box!";
     private string skillList = "Your Skills:";
 
     private int numSkillsAssigned = 0;
@@ -22,12 +23,18 @@ public class SkillContainer : MonoBehaviour
     private GameObject undoButton;
     [SerializeField]
     private TextMeshProUGUI skillListTextBox;
+    [SerializeField]
+    private GameObject allSkillsSelectedUI;
+    
+    [SerializeField]
+    private AnswerSaver answerSaver;
 
     public ref List<Skill> SkillObjectList
     {
         get => ref skillObjectList;
     }
 
+#if UNITY_EDITOR
     private void OnValidate()
     {
         skillObjectList = Resources.LoadAll<Skill>("").ToList();
@@ -36,13 +43,26 @@ public class SkillContainer : MonoBehaviour
             currentSkill.Init();
         }
     }
+#endif
 
     private void Start()
     {
+        skillObjectList = Resources.LoadAll<Skill>("").ToList();
+        foreach (Skill currentSkill in skillObjectList)
+        {
+            currentSkill.Init();
+        }
+
         if (skillGenerator == null)
         {
             skillGenerator = FindObjectOfType<SkillGenerator>();
         }
+
+        if (answerSaver == null)
+        {
+            answerSaver = GetComponent<AnswerSaver>();
+        }
+
         if (undoButton == null)
         {
             Debug.LogError("no reference to undo button set in " + this);
@@ -111,10 +131,27 @@ public class SkillContainer : MonoBehaviour
         if (numSkillsAssigned < skillObjectList.Count)
         {
             skillGenerator.GenerateSkill();
+            allSkillsSelectedUI.SetActive(false);
         }
         else
         {
             skillGenerator.AddFinalSkill();
+            allSkillsSelectedUI.SetActive(true);
+            SaveSkills();
         }
+    }
+
+    private void SaveSkills()
+    {
+        string tempString = string.Empty;
+        foreach (Skill currentSkill in skillObjectList)
+        {
+            if (currentSkill.HasSkill)
+            {
+                tempString += currentSkill.NameOfSkill + ',';
+            }
+        }
+
+        answerSaver.saveAnswer(tempString);
     }
 }

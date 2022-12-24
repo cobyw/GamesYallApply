@@ -9,6 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 190eed17b34dc3b4597f8c278bc63479
   - enabled: 1
+    path: Assets/Scenes/BoringForm.unity
+    guid: e4bb1fb4400565a42ada329a0d38d702
+  - enabled: 1
     path: Assets/Scenes/SkillSelection.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/RoleSelection.unity
+    guid: 63b911b5678c8ef4da5b56452302fe42
+  - enabled: 1
+    path: Assets/Scenes/TheFinalStuff.unity
+    guid: e9c1ddfe055ea5745b7457fb0653e9c9
+  - enabled: 1
+    path: Assets/Scenes/Conclusion.unity
+    guid: 58fa07c77963053409b8f734f9951d44
   m_configObjects: {}

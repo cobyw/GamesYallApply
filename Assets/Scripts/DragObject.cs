@@ -11,14 +11,11 @@ public class DragObject : MonoBehaviour
 
     private Vector3 mOffset;
     private float mZCoord;
-    private bool beingHeld = false;
+    private Vector3 originalScale;
 
-    private bool BeingHeld
+    private void Start()
     {
-        get
-        {
-            return beingHeld;
-        }
+        originalScale = transform.localScale;
     }
 
     void OnMouseDown()
@@ -27,12 +24,6 @@ public class DragObject : MonoBehaviour
 
         // Store offset = gameobject world pos - mouse world pos
         mOffset = new Vector3(transform.position.x, transform.position.y, transform.position.z + offset) - GetMouseAsWorldPoint();
-        beingHeld = true;
-    }
-
-    private void OnMouseUp()
-    {
-        beingHeld = false;
     }
 
     private Vector3 GetMouseAsWorldPoint()
@@ -50,5 +41,7 @@ public class DragObject : MonoBehaviour
     void OnMouseDrag()
     {
         transform.position = GetMouseAsWorldPoint() + mOffset;
+        transform.rotation = Quaternion.identity;
+        transform.localScale = originalScale;
     }
 }
