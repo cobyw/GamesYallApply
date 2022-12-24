@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dbcb6e2732d5644a9a6a60d38fe07ff, type: 3}
+  m_Name: Game Committee Outreach Officer
+  m_EditorClassIdentifier: 
+  nameOfRoll: Game Committee Outreach Officer
+  descriptionOfRole: manage communications with game devs, coordinate production
+    (what tech do we need? what else is needed for setup?), socialize with devs at
+    the event
+  requiredSkills:
+  - {fileID: 11400000, guid: b5c4b9dd93d5ad44e88a406dc2d8ebe2, type: 2}
+  - {fileID: 11400000, guid: 3c8939821add0354ba8e83ffb1b1bde8, type: 2}
+  - {fileID: 11400000, guid: 95a5fc228ff35144fb65d8b6cae632a4, type: 2}

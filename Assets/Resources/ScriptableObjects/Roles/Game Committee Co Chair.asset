@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dbcb6e2732d5644a9a6a60d38fe07ff, type: 3}
+  m_Name: Game Committee Co Chair
+  m_EditorClassIdentifier: 
+  nameOfRoll: Game Committee Co Chair
+  descriptionOfRole: "organize meetings, make agendas, delegate and follow up\n\nReview
+    submissions, select games as well as occasional guest curators and presenters.
+    Round out submissions with invites and direct asks.\n\nDetermine occasional themes
+    or spotlights, collaborate with Working Groups on media jams.  \r\n\nCommunicate
+    information about selected games, themes, guests, etc to staff and other committees,
+    manage communications with game devs and presenters who are showing at the meetup
+    (templates and info will be provided)"
+  requiredSkills:
+  - {fileID: 11400000, guid: 058eff10eba27dc4bb035e85f177cbd0, type: 2}
+  - {fileID: 11400000, guid: b829b45533ec1fb40bdbec8b84129f7f, type: 2}
+  - {fileID: 11400000, guid: c9d442ddbf4ee0046bb7d3cb34a220e8, type: 2}
+  - {fileID: 11400000, guid: 95a5fc228ff35144fb65d8b6cae632a4, type: 2}
+  - {fileID: 11400000, guid: b5c4b9dd93d5ad44e88a406dc2d8ebe2, type: 2}

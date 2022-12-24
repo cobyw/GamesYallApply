@@ -37,11 +37,11 @@ public class SkillGenerator : MonoBehaviour
         currentSkill.Skill = skillsToGenerate[currentSkillIndex];
 
         currentSkillIndex ++;
+    }
 
-        //if (currentSkillIndex >= skillsToGenerate.Count)
-        //{
-        //    currentSkillIndex = 0;
-        //}
+    public void AddFinalSkill()
+    {
+        currentSkillIndex++;
     }
 
     public void Undo()
@@ -52,11 +52,6 @@ public class SkillGenerator : MonoBehaviour
         }
 
         currentSkillIndex-=2;
-
-        //if (currentSkillIndex < 0)
-        //{
-        //    currentSkillIndex = skillsToGenerate.Count - 1;
-        //}
 
         skillContainer.RemoveSkill(skillsToGenerate[currentSkillIndex]);
     }

@@ -112,5 +112,9 @@ public class SkillContainer : MonoBehaviour
         {
             skillGenerator.GenerateSkill();
         }
+        else
+        {
+            skillGenerator.AddFinalSkill();
+        }
     }
 }
