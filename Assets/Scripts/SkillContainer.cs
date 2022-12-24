@@ -139,6 +139,8 @@ public class SkillContainer : MonoBehaviour
             allSkillsSelectedUI.SetActive(true);
             SaveSkills();
         }
+
+        SliderBrain.Instance.UpdateSlider(numSkillsAssigned, skillObjectList.Count);
     }
 
     private void SaveSkills()

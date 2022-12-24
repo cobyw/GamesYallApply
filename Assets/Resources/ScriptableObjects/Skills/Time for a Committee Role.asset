@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dbcb6e2732d5644a9a6a60d38fe07ff, type: 3}
-  m_Name: Ad Hoc Volunteer
+  m_Script: {fileID: 11500000, guid: 6a88c34359e70ca4cbc50bb8d6720f2b, type: 3}
+  m_Name: Time for a Committee Role
   m_EditorClassIdentifier: 
-  nameOfRole: Ad Hoc Volunteer
-  descriptionOfRole: 'No minimum time commitment.
-
-
-    Help out as needed before,
-    during, or after an event. No need to specialize!'
-  requiredSkills: []
+  nameOfSkill: Time for a Committee Role
+  descriptionOfSkill: Monthly time commitment of 10 hours per month split between
+    meetings, events, and other role specific tasks.

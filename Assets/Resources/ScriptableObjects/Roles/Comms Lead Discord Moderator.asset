@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dbcb6e2732d5644a9a6a60d38fe07ff, type: 3}
+  m_Name: Comms Lead Discord Moderator
+  m_EditorClassIdentifier: 
+  nameOfRole: Comms Lead Discord Moderator
+  descriptionOfRole: 'The communications committee is in charge of press, documentation,
+    social media, and our website.
+
+
+    The Lead Discord Moderator is responsible
+    for making final calls on discord moderation action as well as maintaining and
+    updating the discord with upcoming events.'
+  requiredSkills:
+  - {fileID: 11400000, guid: eb0adc476de013a41a45940bb0cd95f9, type: 2}
+  - {fileID: 11400000, guid: 7a9ae7e492d076d499184b4fca26d965, type: 2}

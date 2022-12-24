@@ -217,5 +217,8 @@ public class RoleGenerator : MonoBehaviour
 
             answerSaver.saveAnswer(tempString);
         }
+
+
+        SliderBrain.Instance.UpdateSlider(numberBanked, roleObjects.Count);
     }
 }

@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dbcb6e2732d5644a9a6a60d38fe07ff, type: 3}
-  m_Name: Ad Hoc Volunteer
+  m_Name: Discord Moderator
   m_EditorClassIdentifier: 
-  nameOfRole: Ad Hoc Volunteer
+  nameOfRole: Discord Moderator
   descriptionOfRole: 'No minimum time commitment.
 
 
-    Help out as needed before,
-    during, or after an event. No need to specialize!'
-  requiredSkills: []
+    This role is held by all
+    committee members but other members of the community are welcome to apply. Discord
+    moderators help keep the discord atmosphere friendly and help monitor the discord
+    for bad behaviour.'
+  requiredSkills:
+  - {fileID: 11400000, guid: eb0adc476de013a41a45940bb0cd95f9, type: 2}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dbcb6e2732d5644a9a6a60d38fe07ff, type: 3}
+  m_Name: Production Volunteer Lead
+  m_EditorClassIdentifier: 
+  nameOfRole: Production Volunteer Lead
+  descriptionOfRole: "The production commitee is resonsible for event production,
+    volunteer support, and tech maintenance.\n\nThe volunteer lead is responsible
+    for coordinating with potential volunteers via email (templates and info will
+    be provided), review volunteering info sheets to know what\u2019s going on at
+    the meetup, greeting volunteers, showing them what to do and checking in on them
+    throughout events, as well as sending thank you emails after events."
+  requiredSkills:
+  - {fileID: 11400000, guid: 058eff10eba27dc4bb035e85f177cbd0, type: 2}
+  - {fileID: 11400000, guid: b5c4b9dd93d5ad44e88a406dc2d8ebe2, type: 2}
+  - {fileID: 11400000, guid: 7a9ae7e492d076d499184b4fca26d965, type: 2}
+  - {fileID: 11400000, guid: f283a1663612f0143aa35c5a991c20bf, type: 2}
+  - {fileID: 11400000, guid: b46883140deaded4db6fc8bd931803c3, type: 2}
+  - {fileID: 11400000, guid: d5dbcf7985e20244bbe4c27c3ab5812e, type: 2}
+  - {fileID: 11400000, guid: 95a5fc228ff35144fb65d8b6cae632a4, type: 2}
