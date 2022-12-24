@@ -11,6 +11,7 @@ public class RoleObject : MonoBehaviour
     [SerializeField] private Vector3 finalScale = new Vector3(3, 1, 2);
     [SerializeField] private string GoodCubeName = "GoodCube";
     [SerializeField] private string BadCubeName = "BadCube";
+    [SerializeField] private float timeToVanish = 5;
 
     public bool discarded = false;
     public bool selected = false;
@@ -80,14 +81,15 @@ public class RoleObject : MonoBehaviour
 
     private IEnumerator ReduceOverTime()
     {
-        float timeToVanish = 1;
         float timePassed = 0;
         while (timePassed < timeToVanish)
         {
-            Vector3 newScale = new Vector3 (Mathf.Lerp(originalScale.x, finalScale.x, timePassed), Mathf.Lerp(originalScale.y, finalScale.y, timePassed), originalScale.z);
+            Vector3 newScale = new Vector3 (Mathf.Lerp(originalScale.x, finalScale.x, timePassed), Mathf.Lerp(originalScale.y, finalScale.y, timePassed/timeToVanish), originalScale.z);
             transform.localScale = newScale;
             timePassed += Time.deltaTime;
             yield return null;
         }
+
+        RoleGenerator.Instance.AutoBank(this);
     }
 }

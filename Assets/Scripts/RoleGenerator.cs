@@ -27,6 +27,30 @@ public class RoleGenerator : MonoBehaviour
     [SerializeField] private AnswerSaver answerSaver;
 
 
+    private static RoleGenerator _instance;
+
+    public static RoleGenerator Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,7 +100,7 @@ public class RoleGenerator : MonoBehaviour
 
             conString = initialString;
             textMeshPro.text = conString;
-            
+
         }
 
         numberBanked = 0;
@@ -138,6 +162,30 @@ public class RoleGenerator : MonoBehaviour
         }
 
         CheckIfAllBanked();
+    }
+
+    public void AutoBank(RoleObject roleObject)
+    {
+        roleObject.banked = true;
+        roleObject.gameObject.SetActive(false);
+        numberBanked++;
+
+        if (roleObject.selected)
+        {
+            numberSelected++;
+
+            //if this is our first one we need to initialize the constring
+            if (numberSelected == 1)
+            {
+                conString = conStringPrefix;
+            }
+
+            //then we add the new role
+            conString += "\n" + roleObject.Role.NameOfRole;
+            textMeshPro.text = conString;
+        }
+
+            CheckIfAllBanked();
     }
 
     private void CheckIfAllBanked()

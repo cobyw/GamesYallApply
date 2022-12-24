@@ -326,9 +326,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   role: {fileID: 11400000, guid: ae6849b91d8c92a44b11b4ae7fc55353, type: 2}
   textMeshPro: {fileID: 5621094537067242914}
-  finalScale: {x: 3, y: 1, z: 2}
+  finalScale: {x: 1, y: 1, z: 1}
   GoodCubeName: GoodCube
   BadCubeName: BadCube
+  timeToVanish: 3
   discarded: 0
   selected: 0
   banked: 0
