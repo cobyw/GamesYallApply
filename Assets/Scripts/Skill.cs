@@ -54,5 +54,9 @@ public class Skill : ScriptableObject
         {
             return descriptionOfSkill;
         }
+        set
+        {
+            descriptionOfSkill = value;
+        }
     }
 }

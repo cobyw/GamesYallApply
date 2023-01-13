@@ -22,6 +22,7 @@ public class Role : ScriptableObject
     public string DescriptionOfRole
     {
         get => descriptionOfRole;
+        set => descriptionOfRole = value;
     }
 
 #if UNITY_EDITOR
