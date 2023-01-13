@@ -2529,14 +2529,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allRoleObjects:
   - {fileID: 11400000, guid: ae6849b91d8c92a44b11b4ae7fc55353, type: 2}
-  - {fileID: 11400000, guid: 0b06c71aa598ab342a47f553ea740918, type: 2}
-  - {fileID: 11400000, guid: 88868ac09c2a0854ea06b91a065df8df, type: 2}
-  - {fileID: 11400000, guid: 038356e600f3d4e4e8f83bdb1b41f92e, type: 2}
-  - {fileID: 11400000, guid: 19a08db067e96cc4390176dc4e09fe0c, type: 2}
-  - {fileID: 11400000, guid: 8127e55b47fbbf54684113cefe22c6e1, type: 2}
+  - {fileID: 11400000, guid: aa1f599fd8a10f241a6bb0e81fc23b9e, type: 2}
+  - {fileID: 11400000, guid: 6d384de1cfd6c2f44a34ed43243afb62, type: 2}
+  - {fileID: 11400000, guid: 25115ac9499f649448eac7bdade85b93, type: 2}
+  - {fileID: 11400000, guid: c0c0069f1636f8d4cb8762fc80f39a56, type: 2}
+  - {fileID: 11400000, guid: 9edfc8968950c8d4c89b4c6e3ca3eea8, type: 2}
+  - {fileID: 11400000, guid: 6f4f2a45bfbaa1949a15cff5c1134294, type: 2}
+  - {fileID: 11400000, guid: 17a2fa17f8c188f48a163cb540b1ac83, type: 2}
+  - {fileID: 11400000, guid: ef8e8536ab418f0418298cd57479b33a, type: 2}
   - {fileID: 11400000, guid: d264fbb8b528670448ebc431450b7558, type: 2}
   - {fileID: 11400000, guid: 183388b7e1ac8cb49a064621a3e1b718, type: 2}
   - {fileID: 11400000, guid: 4dd061b8daf45a7419f70e62f2d4346a, type: 2}
+  - {fileID: 11400000, guid: f3c4aad4845eead40926fea2b4a728d0, type: 2}
+  - {fileID: 11400000, guid: c5680ca751b065340902b61971ef867c, type: 2}
+  - {fileID: 11400000, guid: 06100f67b2d068841b23e9ec1d0a4ab7, type: 2}
+  - {fileID: 11400000, guid: bfd98ea99e5ad9c4bb43054add36bf7d, type: 2}
+  - {fileID: 11400000, guid: d18f849258ca9514c936a279500b20bc, type: 2}
   qualifiedRoles: []
 --- !u!4 &1675452139
 Transform:
@@ -2573,8 +2581,14 @@ MonoBehaviour:
   roleObjects: []
   initialString: Add roles to the blue area and press "Bank Selected" to bank them
     for application!
+  onlyVolunteerSkills: Join in when you can as a volunteer to gain skills with us!
+    After you've volunteered twice please consider applying again for a committee
+    position!
+  onlyVolunteerTime: Join in when you can as a volunteer! If your schedule opens
+    up in the future, please consider applying again for a committee position.
   conStringPrefix: "The roles you are applying for are: \n"
   conString: 
+  timeSkill: {fileID: 11400000, guid: 7a9ae7e492d076d499184b4fca26d965, type: 2}
   answerSaver: {fileID: 1675452141}
 --- !u!114 &1675452141
 MonoBehaviour:
@@ -3555,11 +3569,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.05
+  m_fontSize: 15.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 16
+  m_fontSizeMin: 12
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -3591,7 +3605,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -1.5790548, z: 0, w: -10.000682}
+  m_margin: {x: 0, y: 0.9825468, z: 0, w: -10.000682}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

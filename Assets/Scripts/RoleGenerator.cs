@@ -18,8 +18,12 @@ public class RoleGenerator : MonoBehaviour
     [SerializeField] private List<RoleObject> roleObjects;
 
     [SerializeField] private string initialString = "Add roles to the blue area and press \"Bank Selected\" to bank them for application!";
+    [SerializeField] private string onlyVolunteerSkills = "Join in when you can as a volunteer to gain skills with us! After you've volunteered twice please consider applying again for a committee position!";
+    [SerializeField] private string onlyVolunteerTime = "Join in when you can as a volunteer! If your schedule opens up in the future, please consider applying again for a committee position.";
     [SerializeField] private string conStringPrefix = "The roles you are applying for are: \n";
     [SerializeField] private string conString = "";
+
+    [SerializeField] private Skill timeSkill;
 
     private int numberSelected = 0;
     private int numberBanked = 0;
@@ -61,8 +65,28 @@ public class RoleGenerator : MonoBehaviour
 
         numberSelected = 0;
 
+        CheckForOnlyVolunteer();
         GenerateRoles();
         CheckIfAllBanked();
+    }
+
+    private void CheckForOnlyVolunteer()
+    {
+        //are they only qualified to volunteer?
+        if (roleContrainer.QualifiedRoles.Count == 1)
+        {
+            //is it because they don't have time?
+            if (!timeSkill.HasSkill)
+            {
+                textMeshPro.text = onlyVolunteerTime;
+            }
+            //or is it because they just need to gain skills?
+            else
+            {
+                textMeshPro.text = onlyVolunteerSkills;
+            }
+
+        }
     }
 
     private void GenerateRoles()
