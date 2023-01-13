@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class DescriptionManager : MonoBehaviour
@@ -13,7 +14,8 @@ public class DescriptionManager : MonoBehaviour
         get => descriptions;
     }
 
-    void Onvalidate()
+    [Button]
+    void GetDescriptions()
     {
         descriptions = JsonUtility.FromJson<DescriptionFromJSONList>(descriptionJSON.ToString());
     }
