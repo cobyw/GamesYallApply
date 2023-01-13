@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbcb6e2732d5644a9a6a60d38fe07ff, type: 3}
   m_Name: Games Outreach Officer
   m_EditorClassIdentifier: 
-  nameOfRole: Game Committee Outreach Officer
-  descriptionOfRole: 'The games commitee is resonsible for selecting games, spotlighting
+  nameOfRole: Games Outreach Officer
+  descriptionOfRole: 'The games committee is responsible for selecting games, spotlighting
     creators, and coordinating with developers.
 
 

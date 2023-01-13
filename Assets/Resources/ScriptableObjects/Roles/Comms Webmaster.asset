@@ -13,9 +13,14 @@ MonoBehaviour:
   m_Name: Comms Webmaster
   m_EditorClassIdentifier: 
   nameOfRole: Comms Webmaster
-  descriptionOfRole: "The communications committee is in charge of press, documentation,
-    social media, and our website.\n\nThe webmaster is responsible for making web
-    updates and formatting images for the website and other needs\r."
+  descriptionOfRole: 'The communications committee is in charge of press, documentation,
+    social media, and our website.
+
+
+    The webmaster is responsible for making
+    web updates and formatting images for the website and other needs
+
+    .'
   requiredSkills:
   - {fileID: 11400000, guid: 14405105e0f802346a0b4f6712c15de5, type: 2}
   - {fileID: 11400000, guid: 7a9ae7e492d076d499184b4fca26d965, type: 2}

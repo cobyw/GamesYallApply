@@ -13,9 +13,15 @@ MonoBehaviour:
   m_Name: Comms Documentarian
   m_EditorClassIdentifier: 
   nameOfRole: Comms Documentarian
-  descriptionOfRole: "The communications committee is in charge of press, documentation,
-    social media, and our website.\n\nThe documentarian is responsible for taking
-    photos at events, recording live streams\r, and providing this data to the archivist."
+  descriptionOfRole: 'The communications committee is in charge of press, documentation,
+    social media, and our website.
+
+
+    The documentarian is responsible for taking
+    photos at events, recording live streams
+
+    , and providing this data to the
+    archivist.'
   requiredSkills:
   - {fileID: 11400000, guid: 7a9ae7e492d076d499184b4fca26d965, type: 2}
   - {fileID: 11400000, guid: b5c4b9dd93d5ad44e88a406dc2d8ebe2, type: 2}
