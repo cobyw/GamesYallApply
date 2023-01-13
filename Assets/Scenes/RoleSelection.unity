@@ -2341,6 +2341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: TheFinalStuff
+  listenForReset: 1
 --- !u!4 &1483790930
 Transform:
   m_ObjectHideFlags: 0

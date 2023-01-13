@@ -20,7 +20,6 @@ public class SkillObject : MonoBehaviour
             skill = value;
             SetName();
             skill.HasSkill = false;
-            skill.HasSkill = false;
         }
     }
 

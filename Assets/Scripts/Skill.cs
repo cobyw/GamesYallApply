@@ -7,7 +7,9 @@ public class Skill : ScriptableObject
 {
     [SerializeField] private string nameOfSkill;
     [SerializeField, TextArea(15, 20)] private string descriptionOfSkill;
-    private bool hasSkill = false;
+    [SerializeField] private bool requiredSkill = false;
+
+    [SerializeField] private bool hasSkill = false;
     private bool skillAssigned = false;
 
     public bool HasSkill
@@ -29,16 +31,25 @@ public class Skill : ScriptableObject
         }
     }
 
+    public bool RequiredSkill {
+        get => requiredSkill;
+    }
+
+#if UNITY_EDITOR
     private void OnValidate()
     {
-        Init();
+        if (!Application.isPlaying)
+        {
+            Init();
+        }
     }
+#endif
 
     public void Init()
     {
         nameOfSkill = name;
-        hasSkill = false;
-        skillAssigned = false;
+        HasSkill = false;
+        SkillAssigned = false;
     }
 
     public string NameOfSkill

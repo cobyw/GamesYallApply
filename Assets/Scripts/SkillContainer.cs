@@ -37,10 +37,13 @@ public class SkillContainer : MonoBehaviour
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        skillObjectList = Resources.LoadAll<Skill>("").ToList();
-        foreach (Skill currentSkill in skillObjectList)
+        if (!Application.isPlaying)
         {
-            currentSkill.Init();
+            skillObjectList = Resources.LoadAll<Skill>("").ToList();
+            foreach (Skill currentSkill in skillObjectList)
+            {
+                currentSkill.Init();
+            }
         }
     }
 #endif

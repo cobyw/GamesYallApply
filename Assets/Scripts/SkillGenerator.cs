@@ -6,6 +6,7 @@ using System.Linq;
 
 public class SkillGenerator : MonoBehaviour
 {
+    [SerializeField] GameObject requiredSkillBlocker;
     private List<Skill> skillsToGenerate;
     public SkillObject prefabForSkills;
 
@@ -36,7 +37,10 @@ public class SkillGenerator : MonoBehaviour
         currentSkill = Instantiate(prefabForSkills, transform);
         currentSkill.Skill = skillsToGenerate[currentSkillIndex];
 
-        currentSkillIndex ++;
+        //prevents users from discarding required skills;
+        requiredSkillBlocker.SetActive(currentSkill.Skill.RequiredSkill);
+
+        currentSkillIndex++;
     }
 
     public void AddFinalSkill()
