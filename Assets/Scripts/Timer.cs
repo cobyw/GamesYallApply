@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private float timerLength = 300;
     [SerializeField] private TextMeshProUGUI tmpro;
     [SerializeField] private string timerResetSceneName = "BoringForm";
-    [SerializeField] private string timerStopScene = "Conclusion";
+    [SerializeField] private string[] timerStopScenes;
 
 
     private bool timerRunning;
@@ -61,9 +61,13 @@ public class Timer : MonoBehaviour
             timeRemaining = timerLength;
             tmpro.text = FormatTime(timeRemaining);
         }
-        if (scene.name == timerStopScene)
+
+        foreach (string stopSceneName in timerStopScenes)
         {
-            timerRunning = false;
+            if (scene.name == stopSceneName)
+            {
+                timerRunning = false;
+            }
         }
     }
 
