@@ -207,7 +207,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
+  m_fontSize: 56.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1197,6 +1197,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 548544010}
+        m_TargetAssemblyTypeName: LocalAnswerSaver, Assembly-CSharp
+        m_MethodName: SaveLocalAnswerJsonCombined
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &482567051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1245,6 +1257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 548544009}
   - component: {fileID: 548544008}
+  - component: {fileID: 548544010}
   m_Layer: 0
   m_Name: FormSubmit
   m_TagString: Untagged
@@ -1279,6 +1292,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &548544010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548544007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234c163c839da8b4f8210457c4177ef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  formAnswers: {fileID: 11400000, guid: 73521627ce765f342879b2a5201b8889, type: 2}
 --- !u!1 &557020449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2758,7 +2784,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11.5
+  m_fontSize: 10
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2962,7 +2988,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.9
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3177,6 +3203,10 @@ PrefabInstance:
     - target: {fileID: 7779241476589537422, guid: dca27bf88b0babc458481d742ee7bdd7, type: 3}
       propertyPath: m_Value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7779241477019798956, guid: dca27bf88b0babc458481d742ee7bdd7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.9999924
       objectReference: {fileID: 0}
     - target: {fileID: 7779241477489100274, guid: dca27bf88b0babc458481d742ee7bdd7, type: 3}
       propertyPath: m_Value

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 [System.Serializable]
 public enum AnswerType
@@ -15,8 +16,19 @@ public enum AnswerType
 }
 
 [CreateAssetMenu(fileName = "Form Answer", menuName = "ScriptableObjects/Form Answer Scriptable Object", order = 3)]
-
 public class FormAnswers : ScriptableObject
+{
+    public string nameField;
+    public string email;
+    public string skills;
+    public string roles;
+    public string startDate;
+    public string marginilized;
+    public string additionalInfo;
+}
+
+[System.Serializable]
+public class SerializableFormAnswers
 {
     public string nameField;
     public string email;
