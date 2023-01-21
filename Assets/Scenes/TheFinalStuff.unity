@@ -207,7 +207,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56.95
+  m_fontSize: 70
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1199,7 +1199,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 548544010}
         m_TargetAssemblyTypeName: LocalAnswerSaver, Assembly-CSharp
-        m_MethodName: SaveLocalAnswerJsonCombined
+        m_MethodName: SaveAnswersAsPlayerPrefs
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2784,7 +2784,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
+  m_fontSize: 11.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2988,7 +2988,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 24.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3206,7 +3206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7779241477019798956, guid: dca27bf88b0babc458481d742ee7bdd7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -4.9999924
+      value: -4.9999847
       objectReference: {fileID: 0}
     - target: {fileID: 7779241477489100274, guid: dca27bf88b0babc458481d742ee7bdd7, type: 3}
       propertyPath: m_Value

@@ -4,37 +4,19 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using WebGLSaveExtension;
 
 public class LocalAnswerSaver : MonoBehaviour
 {
     [SerializeField] FormAnswers formAnswers;
-    public void SaveLocalAnswer()
+
+    public void SaveAnswersAsPlayerPrefs()
     {
-        var outputPath = Path.Combine(Application.persistentDataPath, formAnswers.nameField + ".txt");
-
-        string concat = formAnswers.nameField + ";";
-        concat += formAnswers.email + ";";
-        concat += formAnswers.skills + ";";
-        concat += formAnswers.roles + ";";
-        concat += formAnswers.startDate + ";";
-        concat += formAnswers.marginilized + ";";
-        concat += formAnswers.additionalInfo;
-
-        File.WriteAllText(outputPath, concat);
-    }
-
-    public void SaveLocalAnswerJsonCombined()
-    {
-        string fileName = string.Format("LocalAnswers.json");
-        string jsonPath = Path.Combine(Application.persistentDataPath, fileName);
-
         string inputString = "";
 
-        if (File.Exists(jsonPath))
+        if (PlayerPrefs.HasKey("SaveData"))
         {
 
-            inputString = File.ReadAllText(jsonPath);
+            inputString = PlayerPrefs.GetString("SaveData");
             inputString += "\n";
         }
 
@@ -52,6 +34,6 @@ public class LocalAnswerSaver : MonoBehaviour
 
         inputString += jsonToSaveConverted;
 
-        File.WriteAllText(jsonPath, inputString);
+        PlayerPrefs.SetString("SaveData", inputString);
     }
 }
